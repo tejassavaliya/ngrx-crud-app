@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-crud-app": {
+    "ngrx-crud-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-crud-app",
+            "outputPath": "dist/ngrx-crud-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-crud-app:build"
+            "browserTarget": "ngrx-crud-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-crud-app:build:production"
+              "browserTarget": "ngrx-crud-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-crud-app:build"
+            "browserTarget": "ngrx-crud-app:build"
           }
         },
         "test": {
@@ -88,6 +88,10 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@fortawesome/fontawesome-free/css/fontawesome.scss",
+              "./node_modules/@fortawesome/fontawesome-free/css/brands.scss",
+              "./node_modules/@fortawesome/fontawesome-free/css/solid.scss",
+              "../node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -110,15 +114,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ngx-crud-app:serve"
+            "devServerTarget": "ngrx-crud-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ngx-crud-app:serve:production"
+              "devServerTarget": "ngrx-crud-app:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "ngx-crud-app"
+    }
+  },
+  "defaultProject": "ngrx-crud-app",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
