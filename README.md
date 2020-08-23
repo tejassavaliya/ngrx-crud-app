@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run dev` for a dev server.
+
+### Follow the steps for set up the NgRx
 `
 1) ng add @ngrx/store@latest --minimal false
 2) ng add @ngrx/schematics@latest
@@ -15,6 +17,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 7) Add Effects - ng add @ngrx/effects@latest
 8) ng g effect products/store/product --skipTests=true --module=products/products.module.ts
 9) ng add @ngrx/entity@latest
-10) 
 
 `
