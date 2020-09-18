@@ -8,3 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ngrx-crud-app';
 }
+
+/*
+https://github.com/mike1477/NGRX-Products
+https://www.youtube.com/watch?v=Rz0ZTbeQ5Qo
+
+ */

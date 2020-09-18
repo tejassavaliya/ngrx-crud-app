@@ -10,6 +10,7 @@
     "e2e": "ng e2e",
     "generate": "node ./server/server.js > ./server/database.json",
     "server": "json-server --watch ./server/db.json",
+    "emp-server": "json-server --watch ./server/employee.json",
     "dev": "concurrently \"npm run server\" \"npm run start\""
   },
   "private": true,

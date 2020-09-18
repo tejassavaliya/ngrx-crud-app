@@ -11,10 +11,11 @@ export class EmployeesService {
 
   constructor(private http:HttpClient) { }
   // baseUrl:string = `https://reqres.in/api/users`;
-  baseUrl:string = `http://dummy.restapiexample.com/api/v1`
+  // baseUrl:string = `http://dummy.restapiexample.com/api/v1`
+  baseUrl:string = `http://localhost:3000`
 
   getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(`${this.baseUrl}/employees`).pipe(map( (employees) => employees['data']))
+    return this.http.get<Employee[]>(`${this.baseUrl}/employees`).pipe(map( (employees) => employees))
   }
   createEmployee(reqObj) {
     return this.http.post(`${this.baseUrl}/create`, reqObj )

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {select, Store} from "@ngrx/store";
-import {EmployeeState, selectFeatureEmployees} from "../../store";
+import {EmployeeState, selectEmployees} from "../../store";
 import {EmployeesService} from "../../services/employees.service";
 import {loadEmployees} from "../../store/employee.actions";
 import * as EmployeeAction from '../../store/employee.actions';
@@ -26,7 +26,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   loadEmployees() {
-    this.employees$ = this.store.pipe(select(selectFeatureEmployees))
+    this.employees$ = this.store.pipe(select(selectEmployees))
   }
 
   editEmployee(employee){
