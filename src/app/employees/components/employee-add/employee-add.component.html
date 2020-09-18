@@ -1,11 +1,12 @@
+
 <div class="row justify-content-center">
   <div class="col-8 mt-4">
-    <h4>Add Employee</h4>
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <h4>{{(isEditMode) ? 'Edit' : 'Add'}} Employee</h4>
+    <form [formGroup]="employeeForm" >
       <div class="form-group">
         <label for="employee_name">Employee Name</label>
         <input type="text"
-               ngModel
+               formControlName="employee_name"
                required
                name="employee_name"
                class="form-control"
@@ -15,7 +16,7 @@
       <div class="mb-3 form-group">
         <label for="employee_salary">Salary</label>
         <textarea class="form-control"
-                  ngModel
+                  formControlName="employee_salary"
                   name="employee_salary"
                   class="form-control"
                   id="employee_salary"
@@ -26,7 +27,7 @@
           <label for="employee_age">Age</label>
           <input type="text"
                  name="employee_age"
-                 ngModel
+                 formControlName="employee_age"
                  required
                  class="form-control"
                  id="employee_age"
@@ -38,8 +39,7 @@
         <label for="profile_image">Prfile Url</label>
         <input type="text"
                name="profile_image"
-               ngModel
-               required
+               formControlName="profile_image"
                class="form-control"
                id="profile_image"
                placeholder="Example: https://source.unsplash.com/1600x900/?product">
@@ -47,7 +47,9 @@
       <button class="btn btn-primary m-1"
               [routerLink]="['/employee']"><i class="fas fa-arrow-left"></i> Back To List</button>
       <button class="btn btn-success m-1"
-              type="submit"
+              type="button"
+              [disabled]="!employeeForm.valid"
+              (click)="onSubmit()"
              >Add Product <i class="fas fa-plus"></i></button>
     </form>
 

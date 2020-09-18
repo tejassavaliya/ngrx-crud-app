@@ -1,6 +1,6 @@
 <button [routerLink]="['/employee/add']">ADD NEW EMPLOYEE</button>
 <div *ngIf="(employees$ | async) as employees">
-  <h3>Customers</h3>
+  <h3>Employees</h3>
   <table class="table table-hover">
     <thead>
     <tr class="table-primary">
@@ -14,17 +14,16 @@
     </thead>
     <tbody>
     <tr>
-      <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
-    </tr>
-    <tr>
-    <tr *ngFor="let employee of (employees$ |async)">
+    <tr *ngFor="let employee of (employees$ | async)">
       <th scope="row">{{employee.id}}</th>
       <td><img src="{{employee.profile_image || default_profile_image}}" height="60px" width="60px"></td>
       <td>{{employee.employee_name}}</td>
       <td>{{employee.employee_salary}}</td>
       <td>{{employee.employee_age}}</td>
       <th>
-        <button type="button" (click)=editEmployee(employee) class="btn btn-warning m-lg-5">Edit</button>
+        <button type="button"
+                [routerLink]="['/employee/edit', employee.id ]"
+                class="btn btn-warning m-lg-5">Edit</button>
         <button type="button" (click)=deleteEmployee(employee) class="btn btn-danger">Delete</button>
       </th>
     </tr>
