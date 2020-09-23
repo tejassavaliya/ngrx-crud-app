@@ -25,3 +25,55 @@ Run `npm run server` for a product server.
 9) ng add @ngrx/entity@latest
 
 `
+##### ************************************
+
+`(*) npm install @ngrx/{store,effects,entity,store-devtools} --save`
+   
+   1) `ng add @ngrx/store@latest --minimal false`
+            
+            `CREATE src/app/reducers/index.ts (359 bytes)`
+           
+            `UPDATE src/app/app.module.ts (555 bytes)
+            
+            `UPDATE package.json (1859 bytes)
+            
+            `√ Packages installed successfully.`
+      
+   2) `ng add @ngrx/store-devtools@latest`
+   
+   3) `ng add @ngrx/schematics@latest`
+   
+        -- `Create store directory at root`
+      
+        -- `run -  mkdir store`
+        
+   4) `ng generate effect store/app --root -m app.module.ts --group`
+   
+        -- `move 'reducer' directory from root to 'store' directory`
+        
+   5) `ng g m employees --module app.module --route employees`
+   
+   6) `ng generate store EmployeeState --statePath=employees/store --module=employees/employees.module.ts --stateInterface=EmployeeState`
+  
+   7) `Update the reducer`
+   
+        `ng generate reducer employees/store/employee --module employees/employees.module.ts --group`
+          
+   8) `ng generate action employees/store/employee --group`
+   
+   9) `create employee model file as interface data`
+   
+   10) `create employee service`
+   
+       `ng g s employees/services/employee `
+   
+   11) `ng generate effect employees/store/employee -m employees/employees.module.ts --group`   
+
+   12) ` ng generate selector employees/store/employee --group`
+   
+   13) ` ng g c employees/components/employee-list`
+   
+   14) ` ng g c employees/components/employee-add-edit`
+   
+   15) ` ng g c pages/home`
+
